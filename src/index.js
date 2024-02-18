@@ -4,7 +4,6 @@ import lumie from "lumie";
 import bodyParser from "body-parser";
 
 const app = express();
-const port = 3000;
 
 //   parse the form data from body using body parser
 app.use(

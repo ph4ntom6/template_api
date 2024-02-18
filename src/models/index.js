@@ -31,11 +31,4 @@ export const UserModel = User(sequelize, Sequelize.DataTypes);
 
 export const ReadAlertModel = ReadAlert(sequelize, Sequelize.DataTypes);
 
-BillModel.associateManually();
-BillVersionModel.associateManually();
-ClientBillImpactsModel.associateManually();
 UserModel.associateManually();
-BusinessModel.associateManually();
-BillHistoryModel.associateManually();
-AlertModel.associateManually();
-ClientBillTrackingModel.associateManually();
