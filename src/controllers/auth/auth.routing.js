@@ -6,7 +6,7 @@ import { check } from "express-validator";
 
 /* middlewares */
 import { validate } from "../../validators/auth";
-``;
+
 /** helpers functions **/
 import translate from "../../helpers/translate";
 
