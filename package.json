@@ -2,8 +2,12 @@
   "name": "templete_api",
   "version": "1.0.0",
   "description": "",
-  "main": "index.js",
-  "type": "module",
+  "main": "src/index.mjs",
+  "type": "commonjs",
+  "engines": {
+    "npm": ">=8.0.0",
+    "node": ">=16.0.0"
+  },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "node ./dist/index.js",
@@ -18,17 +22,18 @@
     "seed": "sequelize-cli db:seed:all --debug",
     "seed-rollback": "sequelize-cli db:seed:undo:all",
     "build": "npm run clean && npm run transpile",
-    "dev": "nodemon --watch src --exec ./src/index.js",
-    "cron-dev": "nodemon --watch src --exec \"eslint src --fix && babel-node\" ./src/cron.js",
-    "queue-dev": "nodemon --watch src --exec \"eslint src --fix && babel-node\" ./src/queue.js",
-    "migrate-script-dev": "nodemon --watch src --exec \"eslint src --fix && babel-node\" ./src/scripts/create-table-script.js",
-    "seed-script-dev": "nodemon --watch src --exec \"eslint src --fix && babel-node\" ./src/scripts/seed-data-script.js seedData",
+    "dev": "nodemon --watch ./src/index.js",
+    "cron-dev": "nodemon --watch  \"eslint src --fix && babel-node\" ./src/cron.js",
+    "queue-dev": "nodemon --watch  \"eslint src --fix && babel-node\" ./src/queue.js",
+    "migrate-script-dev": "nodemon --watch  \"eslint src --fix && babel-node\" ./src/scripts/create-table-script.js",
+    "seed-script-dev": "nodemon --watch  \"eslint src --fix && babel-node\" ./src/scripts/seed-data-script.js seedData",
     "lintfix": "eslint src --fix"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "dependencies": {
+    "@babel/register": "^7.23.7",
     "axios": "^1.5.0",
     "bcrypt": "^5.1.1",
     "body-parser": "^1.20.2",
@@ -45,10 +50,12 @@
     "lumie": "^0.1.2",
     "multer": "^1.4.5-lts.1",
     "mysql2": "^3.9.1",
+    "nodemon": "^3.1.10",
     "passport": "^0.6.0",
     "passport-http-bearer": "^1.0.1",
     "redis": "^3.0.2",
-    "sequelize": "^6.37.0",
+    "sequelize": "^6.37.1",
+    "sequelize-cli": "^6.6.2",
     "sequelize-noupdate-attributes": "^1.0.0"
   }
 }
