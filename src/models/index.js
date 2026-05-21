@@ -4,6 +4,7 @@ import { createClient } from "../config/redis";
 import User from "./User";
 import Role from "./Role";
 import Token from "./OAuthToken";
+import RefreshToken from "./OAuthRefreshToken";
 
 const mysql = require("../config/database");
 
@@ -11,7 +12,7 @@ const sequelize = new Sequelize(
   mysql.database,
   mysql.username,
   mysql.password,
-  mysql
+  mysql,
 );
 
 /*
@@ -28,7 +29,5 @@ export const RefreshTokenModel = RefreshToken(sequelize, Sequelize.DataTypes);
 export const RoleModel = Role(sequelize, Sequelize.DataTypes);
 
 export const UserModel = User(sequelize, Sequelize.DataTypes);
-
-export const ReadAlertModel = ReadAlert(sequelize, Sequelize.DataTypes);
 
 UserModel.associateManually();
