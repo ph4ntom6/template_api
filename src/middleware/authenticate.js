@@ -44,8 +44,8 @@ passport.use(
           return done(null, false);
         }
       }
-    }
-  )
+    },
+  ),
 );
 export default passport.authenticate("bearer", {
   session: false,
